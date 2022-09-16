@@ -1,0 +1,39 @@
+section:
+  name: Skills # Title of section (default: "")
+  id: skills # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 2 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  # template: sections/skills.html # allows you to point to a specific template.
+
+skills:
+- name: Python
+  logo: "/images/sections/skills/python.png"
+  summary: "Python is my main programming language. I use it for data analysis, machine learning, and basic web development for data presentation. I am familiar with the following libraries: NumPy, SciPy, Pandas, Matplotlib, Scikit-learn, Dash, Plotly."
+
+- name: Tensorflow
+  logo: "/images/sections/skills/tensorflow.png"
+  summary: "Capable of building and training neural networks using Tensorflow. Experienced with Keras, but also able to deploy pre-trained models. Usecases vary from natural language processing to particle tagging."
+
+- name: C++
+  logo: "/images/sections/skills/c++.png"
+  summary: "Know basic C/C++ programming. Used for data processing with [ROOT](root.cern) library. Mainly used for scientific computing and data analysis."
+
+- name: ROOT
+  logo: "/images/sections/skills/root.png"
+  # icon: "fa-brands fa-git"
+  summary: "[ROOT](root.cern) is a C++ framework for data analysis develped by CERN for scientific computing. Know basic usage of data analysis, such as histograms, TTrees, and data processing."
+
+- name: Docker
+  logo: "/images/sections/skills/docker.png"
+  summary: "Usually I deploy programs with docker. Also experienced with docker-compose."
+
+
+- name: Linux
+  logo: "/images/sections/skills/linux.png"
+  summary: "Using Linux as development OS. Capable of writing basic bash scripts."
+
+- name: Git
+  logo: "/images/sections/skills/git.png"
+  # icon: "fa-brands fa-git"
+  summary: "All my project are version controlled using git. Using mostly GitHub, occasionally GitLab."

@@ -1,0 +1,46 @@
+section:
+  name: About # Title of section (default: "")
+  id: about # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 1 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  template: sections/about.html # allows you to point to a specific template.
+
+
+designation: Physics Student
+# your company information
+company:
+  name: Charles University
+  url: "https://www.mff.cuni.cz/en/"
+
+summary: I am an **aspiring physicist** with passion for coding. I analyze data from particle detectors and develop tools for **data analysis**. My interests include **Deep Learning** and it's usage in **High Energy Physics** (HEP), data science, and **software development**. I am currently working on my bachelor's thesis at the [Institute of Particle and Nuclear Physics](https://ipnp.cz), Charles University, Prague.
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "samueljankovych@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/jansam123/"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/jansam123/"
+
+resume: "files/CV.pdf"
+
+# - type: soft-skill-indicator
+#   name: Leadership
+#   percentage: 85
+#   color: blue
+
+# - type: soft-skill-indicator
+#   name: Team Work
+#   percentage: 90
+#   color: yellow
+
+# - type: soft-skill-indicator
+#   name: Hard Working
+#   percentage: 85
+#   color: orange

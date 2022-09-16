@@ -1,0 +1,45 @@
+# section information
+section:
+  name: Skúsenosti
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: BEZ TRANSFORMÁTORY a.s.
+    url: "https://bez-transformers.com"
+    location: Bratislava
+    # company overview
+    overview: BEZ TRANSFORMÁTORY a.s. je medzinárodný výrobca transformátorov. 
+  positions:
+  - designation: Brigáda
+    start: Aug 2019 
+    end: Nov 2019
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    # end: Dec 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - CAD modelovanie transformátorov
+    - Modelovanie toku tekutín pomocou Ansys Fluent
+    - Analýza chladienia transformátorov
+
+
+# - company:
+#     name: PreExample Co.
+#     url: "https://www.example.com"
+#     location: Nowhere
+#     overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+#   positions:
+#   - designation: Software Engineer
+#     start: March 2016
+#     end: May 2017
+#     responsibilities:
+#     - Write lots of example codes.
+#     - Read lots of examples.
+#     - See lots of example videos.
+

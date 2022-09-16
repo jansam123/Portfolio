@@ -1,0 +1,84 @@
+section:
+  name: Vzdelanie
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+- name: Bc. Fyzika
+  icon: fa-graduation-cap
+  timeframe: 2020-
+  institution:
+    name: Matematicko-fyzikálna fakulta, Univerzita Karlova
+    url: "https://www.mff.cuni.cz/"
+  # grade: #(optional)
+  #   scale: CGPA
+  #   achieved: 3.5
+  #   outOf: 4
+  takenCourses: #(optional)
+    # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+    showGrades: true
+    collapseAfter: 3
+    courses:
+    - name: Všeobecná relativity
+      achieved: 1 (A)
+      # outOf: 4
+    - name: Hlboké učenie
+      achieved: 1 (A)
+      # outOf: 4
+    - name: Matematická analýza
+      achieved: 1 (A)
+      # outOf: 4
+    - name: Teoretická mechanika
+      achieved: 1 (A)
+  publications: #(optional)
+  - title: Fake tau pozadie v hľadaní excitovaných tau
+    url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
+  extracurricularActivities: #(optional)
+  - Letný študentský projekt
+
+- name: Letná škola
+  icon: fa-sun
+  timeframe: 2020
+  institution:
+    name: HASCO
+    url: "https://indico.cern.ch/event/1122790/"
+  grade: #(optional)
+    scale: Známka
+    achieved: A
+    # outOf: 100
+  takenCourses: #(optional)
+    showGrades: false
+    collapseAfter: 3
+    courses:
+    - name: Fyzika hadronového urýchľovača
+    - name: Štandardný model a teória elektroslabých interackií
+    - name: Fyzika Higgsovho bosónu
+    - name: ROOT prednáška a cvičenie
+    # - name: Advanced Statistics (Machine Learning)
+    - name: Pokročilá štatistika (Strojové učenie)
+    # - name: Quantum Chromodynamics
+    - name: Kvantová chromodynamika
+    # - name: Detector Physics
+    - name: Fyzika detektorov
+    # - name: Accelerator Physics
+    - name: Fyzika urýchľovačov
+  
+
+- name: 8-ročné gymnázium
+  icon: fa-school
+  timeframe: 2012-2020
+  institution:
+    name: Gymnázium Tilgnerova
+    url: "https://tilgnerka.edupage.org/"
+  extracurricularActivities: #(optional)
+  # - Poster presentation at the 24th Conference of Slovak Physicists
+    - Posterová prezentácia na 24. konferencii slovenských fyzikov
+  # grade: #(optional)
+  #   scale: GPA
+  #   achieved: 4.5
+  #   outOf: 5
