@@ -27,16 +27,27 @@
             rgba(34, 136, 168, 0.1) 0%);
 }
 
+.navbar-icon-svg-dark {
+    filter: invert(0) !important;
+}
 
-/* .home img{
+
+.home img{
     width: 200px;
     height: 200px;
-} */
+}
 
-/* .content {
+.content {
     top: -83%;
 
-} */
+}
 
 
+@media only screen and (max-width: 576px) {
+    .home img {
+            width: 140px;
+            max-width: 50%;
+            height: auto;
+        }
+}
 
