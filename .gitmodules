@@ -2,3 +2,6 @@
 	path = public
 	url = https://github.com/jansam123/jansam123.github.io.git
 	branch = main
+[submodule "jansam123.github.io"]
+	path = jansam123.github.io
+	url = https://github.com/jansam123/jansam123.github.io
