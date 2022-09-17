@@ -1,0 +1,53 @@
+.initial-navbar {
+    background-color: #f9fafc;
+    color: #1c2d41;
+    transition: all 0.3s ease-out;
+}
+
+.initial-navbar .navbar-brand {
+    color: #1c2d41;
+    font-weight: 600;
+}
+
+.initial-navbar li a {
+    color: #1c2d41;
+    font-weight: 500;
+    transition: all 0.3s ease-out;
+    border-bottom: 2px solid#F9FAFC;
+}
+
+.initial-navbar .navbar-nav .active,
+.initial-navbar li a:hover {
+    color: #2098d1;
+    transition: all 0.3s ease-out;
+    border-bottom: 2px solid #2098d1;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(34, 136, 168, 0.1) 0%);
+}
+
+
+.home img{
+    width: 200px;
+    height: 200px;
+}
+
+/* .home .greeting,
+.home .greeting-subtitle {
+    color: #1c2d41;
+    background-color: #f9fafc;
+}
+
+.greeting{
+    /* max-width: 80%; */
+}
+
+.arrow {
+    color: #1c2d41;
+}
+
+.content {
+    top: -70%;
+} */
+
