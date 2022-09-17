@@ -34,7 +34,7 @@ enableEmoji: true
 # Site parameters
 params:
   # background image of the landing page
-  background: "images/background1.jpeg"
+  background: "images/background3.jpeg"
 
   # GitHub repo URL and branch of your site
   gitRepo: https://github.com/jansam123/Portfolio
