@@ -35,18 +35,48 @@
 .home img{
     width: 200px;
     height: 200px;
+    background-color: #1c2d41;
 }
 
-.content {
-    top: -83%;
+.navbar-dark .navbar-toggler-icon{
+    filter: invert(1) ;
+}
+/* .navbar-toggler-icon {
+    filter: invert(1) ;
+} */
 
+
+@media screen {
+    .home img {
+        background-color: #1c2d41;
+    }
+}
+
+
+.content {
+    top: -70%;
+
+}
+
+.container-small{
+    background-color: #f9fafc;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 40px;
+}
+
+.home .greeting{
+    color: #1c2d41;
 }
 
 
 @media only screen and (max-width: 576px) {
     .home img {
-            width: 140px;
-            max-width: 50%;
+            width: 150px;
+            max-width: 70%;
             height: auto;
         }
 }

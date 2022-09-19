@@ -8,7 +8,7 @@ menu:
   sidebar:
     name: JIDENN
     identifier: jidenn
-    weight: 500
+    weight: 3
 ---
 
 ## Introduction
