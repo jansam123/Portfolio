@@ -37,3 +37,9 @@ skills:
   logo: "/images/sections/skills/git.png"
   # icon: "fa-brands fa-git"
   summary: "All my project are version controlled using git. Using mostly GitHub, occasionally GitLab."
+
+- name: Slurm
+  logo: "/images/sections/skills/slurm.png"
+  # icon: "fa-brands fa-git"
+  # summary: "All my project are version controlled using git. Using mostly GitHub, occasionally GitLab."
+  summary: "Using Slurm for job processing on HPC clusters, both CPU and GPU farms. Experienced with job submission, monitoring, and job management."

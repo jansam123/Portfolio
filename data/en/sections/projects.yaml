@@ -3,45 +3,55 @@ section:
   name: Projects
   id: projects
   enable: true
-  weight: 5
+  weight: 6
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
 # filter buttons
 buttons:
-- name: All
-  filter: "all"
-- name: Professional
-  filter: "professional"
-- name: Academic
-  filter: "academic"
-- name: Hobby
-  filter: "hobby"
+  - name: All
+    filter: "all"
+  - name: Professional
+    filter: "professional"
+  - name: Academic
+    filter: "academic"
+  - name: Hobby
+    filter: "hobby"
 
 # your projects
 projects:
-- name: Fake tau background in excited tau search
-  # logo: /images/sections/projects/kubernetes.png
-  role: Author
-  timeline: "June 2021 - September 2021"
-  url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
-  # repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Estimation of fake tau background using Fake Factor Method.
-  tags: ["academic", "ATLAS", "CERN"]
+  - name: Fake tau background in excited tau search
+    # logo: /images/sections/projects/kubernetes.png
+    role: Author
+    timeline: "June 2021 - September 2021"
+    url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
+    # repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    summary: Estimation of fake tau background using Fake Factor Method.
+    tags: ["academic", "ATLAS", "CERN"]
 
-- name: Measurement and simulation of a temperature field
-  # logo: /images/sections/projects/kubernetes.png
-  role: Author
-  timeline: "August 2019"
-  url: "https://arxiv.org/abs/1909.01460"
-  summary: Measurements of surface temperature fields, used to determine the heat transfer by conduction and convection from an inhomogeneously heated metallic tube into environment.
-  tags: ["academic", "Heat Equation"]
+  - name: Jet Identification Deep Neural Networks
+    # logo: /images/sections/projects/kubernetes.png
+    role: Author
+    timeline: "June 2022 -"
+    url: http://jansam.wieno.sk/JIDENN/
+    repo: https://github.com/jansam123/JIDENN # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    summary: Framework for the development of deep neural networks for jet identification. Jet identification is the task of classifying jets as originating from either quarks or gluons.
+    tags: ["academic", "ATLAS", "Transformer", "Deep Learning"]
 
-- name: DiaDash
-  role: Developer
-  timeline: "work in progress"
-  repo: https://github.com/jansam123/DiaDash
-  summary: DiaDash is a web application for diabetes patients to track their blood sugar levels and insulin doses.
-  tags: ["hobby", "diabetes", "dashboard"]
+  - name: Measurement and simulation of a temperature field
+    # logo: /images/sections/projects/kubernetes.png
+    role: Author
+    timeline: "August 2019"
+    url: "https://arxiv.org/abs/1909.01460"
+    summary: Measurements of surface temperature fields, used to determine the heat transfer by conduction and convection from an inhomogeneously heated metallic tube into environment.
+    tags: ["academic", "Heat Equation"]
+
+  - name: DiaDash
+    role: Developer
+    timeline: "work in progress"
+    repo: https://github.com/jansam123/DiaDash
+    summary: DiaDash is a web application for diabetes patients to track their blood sugar levels and insulin doses.
+    tags: ["hobby", "diabetes", "dashboard"]

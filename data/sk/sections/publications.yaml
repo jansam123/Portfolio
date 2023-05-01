@@ -1,12 +1,12 @@
-# # section information
-# section:
-#   name: Publications
-#   id: publications
-#   enable: true
-#   weight: 6
-#   showOnNavbar: true
-#   # Can optionally hide the title in sections
-#   # hideTitle: true
+# section information
+section:
+  name: Publikácie
+  id: publications
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
 
 # # filter buttons
 # buttons:
@@ -20,23 +20,17 @@
 #   filter: "security"
 
 # # your publications
-# publications:
-# - title: An Example Paper on Machine Learning
-#   publishedIn:
-#     name: 2020 IEEE Region Symposium (TENSYMP)
-#     date: 7 June 2020
-#     url: https://example.com
-#   authors:
-#   - name: Dr. Madman
-#     url: https://example.com
-#   - name: Dr. Lessmad
-#     url: https://example.com
-#   - name: Dr. Moremad
-#     url: https://example.com
-#   - name: Dr. Goodman
-#     url: https://example.com
-#   paper:
-#     summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
-#     url: https://example.com
-#   categories: ["machinelearning","image-processing"]
-#   tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
+publications:
+  - title: Tagovanie jetov pochádzajúcich z kvarkov a gluónov (Bakalárska práca)
+    publishedIn:
+      name: Matematicko-fyzikální fakulta, Univerzita Karlova
+      date: 21 Jún 2023
+      url: https://mff.cuni.cz
+    authors:
+      - name: Samuel Jankovych
+        url: https://jansam.wieno.sk/sk/
+    paper:
+      summary: Pre správne pochopenie fyziky elementárnych častíc a ich interakcií je dôležité poznať, či je jet iniciovaný kvarkom alebo gluonom. Tento problém nie je jednoduchý kvôli podobným vlastnostiam kvarkových a gluonových jetov. V tejto práci ho riešime pomocou moderných techník Hlbokého učenia. Konkrétne využijeme neurónové siete založené na architektúre Transformeru, ktoré sú natrénované na konstituentoch jetu. Predchádzajúce architektúry používané v rôznych tagovacích úlohách vylepšíme a demonštrujeme ich schopnosť presne rozlíšiť medzi kvarkovými a gluonovými jetmi. Predstavíme novú architektúru Dynamically Enhanced Particle Transformer (DeParT) ako kombináciu poznatkov z rôznych aplikačných oblastí Hlbokého učenia, ktorá prekoná výsledky všetkých predchádzajúcich modelov.
+      url: https://github.com/jansam123/bachelor_thesis
+    categories: ["jet-tagging", "bachelor"]
+    tags: ["ATLAS", "Jet", "Neúronová sieť", "Transformer", "Hlboké učenie"]

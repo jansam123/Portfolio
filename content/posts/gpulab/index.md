@@ -95,7 +95,7 @@ You can try to run the following code:
         ```
         You might need to press enter to confirm the installation, even if not prompted yet. 
 
-If needed, you can follow the official [guide](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) for more details, but remeber to the `srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda --` prefix and run without sudo. 
+If needed, you can follow the official [guide](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) for more details, but remeber to use the prefix `srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda --` and run without sudo. 
 The prefix explains the following: 
 - `srun -p gpu-ffa --gpus=1` - run on node with GPU
 - `ch-run -w -u 0 -g 0 -c /home/username ./cuda` - run as root user (`-u 0 -g 0`) in the container in `./cuda` with working directory `/home/username` and write access to the container (`-w`).
@@ -141,3 +141,33 @@ The prefix explains the following:
     ```bash
     [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
     ```
+## Notes
+### Syntax highlighting and autocompletion in IDE
+Include this lines in `__init__.py` file of tensorflow if you autocompletion and syntax highlighting in your IDE
+
+    ```python
+    # Explicitly import lazy-loaded modules to support autocompletion.
+    # pylint: disable=g-import-not-at-top
+    if _typing.TYPE_CHECKING:
+        from tensorflow_estimator.python.estimator.api._v2 import estimator as estimator
+        from keras.api._v2 import keras
+        from keras.api._v2.keras import losses
+        from keras.api._v2.keras import metrics
+        from keras.api._v2.keras import optimizers
+        from keras.api._v2.keras import initializers
+    # pylint: enable=g-import-not-at-top
+    ```
+### Error when using CNN in TF
+When using CNN in TF you might get the following error:
+```bash
+    Could not load library libcudnn_cnn_infer.so.8. Error: libcuda.so: cannot open shared object file: No such file or directory
+```
+To fix this, you need to add the following lines to `~/.bashrc` (use `source ~/.bashrc` to apply changes):
+```bash
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH
+```
+And create symlink for `libcuda.so`:
+```bash
+    ln -s /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so.1 /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so
+```

@@ -3,50 +3,61 @@ section:
   name: Projekty
   id: projects
   enable: true
-  weight: 5
+  weight: 6
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
 # filter buttons
 buttons:
-- name: Všetky
-  filter: "all"
-- name: Profesionálne
-  filter: "professional"
-- name: Akademické
-  filter: "academic"
-- name: Záujmové
-  filter: "hobby"
+  - name: Všetky
+    filter: "all"
+  - name: Profesionálne
+    filter: "professional"
+  - name: Akademické
+    filter: "academic"
+  - name: Záujmové
+    filter: "hobby"
 
 # your projects
 projects:
-# - name: Fake tau background in excited tau search
-- name: Fake tau pozadie v hľadaní excitovaných tau
-  # logo: /images/sections/projects/kubernetes.png
-  role: Autor
-  timeline: "jún 2021 - september 2021"
-  url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
-  # repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  # summary: Estimation of fake tau background using Fake Factor Method.
-  summary: Odhad fake tau pozadia pomocou Fake Factor Method.
-  tags: ["academic", "ATLAS", "CERN"]
+  # - name: Fake tau background in excited tau search
+  - name: Fake tau pozadie v hľadaní excitovaných tau
+    # logo: /images/sections/projects/kubernetes.png
+    role: Autor
+    timeline: "jún 2021 - september 2021"
+    url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
+    # repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    # summary: Estimation of fake tau background using Fake Factor Method.
+    summary: Odhad fake tau pozadia pomocou Fake Factor Method.
+    tags: ["academic", "ATLAS", "CERN"]
 
-# - name: Measurement and simulation of a temperature field
-- name: Meranie a simulácia teplotného poľa
-  # logo: /images/sections/projects/kubernetes.png
-  role: Autor
-  timeline: "august 2019"
-  url: "https://arxiv.org/abs/1909.01460"
-  # summary: Measurements of surface temperature fields used to determine the heat transfer by conduction and convection from an inhomogeneously heated metallic tube into environment.
-  summary: Meranie povrchových teplotných polí, ktoré slúžia na určenie prenosu tepla pomocou kondukcie a konvekcie z nehomogénnej ohriatej kovovej trubice do prostredia.
-  tags: ["academic", "Heat Equation"]
+  - name: Identifikácia jetov pomocou hlbokých neurónových sietí
+    # logo: /images/sections/projects/kubernetes.png
+    role: Autor
+    timeline: "jún 2022 -"
+    url: http://jansam.wieno.sk/JIDENN/
+    repo: https://github.com/jansam123/JIDENN # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    # summary: Estimation of fake tau background using Fake Factor Method.
+    summary: Framework na vývoj neurónových sietí pre identifikáciu jetov. Identifikácia jetov je klasifikácia jetov na základe ich pôvodu. Využíva sa na rozlíšenie medzi jetmi iniciovanými kvarkom a gluónom.
+    tags: ["academic", "ATLAS", "Transformer", "Deep Learning"]
 
-- name: DiaDash
-  role: Vývojár
-  timeline: "práve sa vyvíja"
-  repo: https://github.com/jansam123/DiaDash
-  # summary: DiaDash is a web application for diabetes patients to track their blood sugar levels and insulin doses.
-  summary: DiaDash je webová aplikácia pre diabetikov na sledovanie hladiny gklykémie v krvi a dávok inzulínu.
-  tags: ["hobby", "diabetes", "dashboard"]
+  # - name: Measurement and simulation of a temperature field
+  - name: Meranie a simulácia teplotného poľa
+    # logo: /images/sections/projects/kubernetes.png
+    role: Autor
+    timeline: "august 2019"
+    url: "https://arxiv.org/abs/1909.01460"
+    # summary: Measurements of surface temperature fields used to determine the heat transfer by conduction and convection from an inhomogeneously heated metallic tube into environment.
+    summary: Meranie povrchových teplotných polí, ktoré slúžia na určenie prenosu tepla pomocou kondukcie a konvekcie z nehomogénnej ohriatej kovovej trubice do prostredia.
+    tags: ["academic", "Heat Equation"]
+
+  - name: DiaDash
+    role: Vývojár
+    timeline: "práve sa vyvíja"
+    repo: https://github.com/jansam123/DiaDash
+    # summary: DiaDash is a web application for diabetes patients to track their blood sugar levels and insulin doses.
+    summary: DiaDash je webová aplikácia pre diabetikov na sledovanie hladiny gklykémie v krvi a dávok inzulínu.
+    tags: ["hobby", "diabetes", "dashboard"]

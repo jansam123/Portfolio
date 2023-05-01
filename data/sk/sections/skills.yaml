@@ -43,3 +43,9 @@ skills:
   # icon: "fa-brands fa-git"
   # summary: "All my project are version controlled using git. Using mostly GitHub, occasionally GitLab."
   summary: "Všetky moje projekty sú verzované pomocou gitu. Používam hlavne GitHub, občas aj GitLab."
+
+- name: Slurm
+  logo: "/images/sections/skills/slurm.png"
+  # icon: "fa-brands fa-git"
+  # summary: "All my project are version controlled using git. Using mostly GitHub, occasionally GitLab."
+  summary: "Skúsenosti s používaním Slurm na využívanie HPC výpočtových zdrojov, ako CPU, tak aj GPU farmy. Skúsenosti so spúšťaním, monitorovaním a managmentom jobov."
