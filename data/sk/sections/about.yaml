@@ -12,7 +12,6 @@ company:
   name: Karlovej univerzite
   url: "https://www.mff.cuni.cz/"
 
-# summary: I am an **aspiring physicist** with passion for coding. I analyze data from particle detectors and develop tools for **data analysis**. My interests include **Deep Learning** and it's usage in **High Energy Physics** (HEP), data science, and **software development**. I am currently working on my bachelor's thesis at the [Institute of Particle and Nuclear Physics](https://ipnp.cz), Charles University, Prague.
 summary: Som začínajúci fyzik s vášnou pre programovanie. Analyzujem dát z detektorov častíc a programujem nátroje na spracovanie dát. Medzi moje zájumi patrí **hlboké učenie** a jeho využitie vo **fyzike vysokých energií** (HEP), **data science** a **softvérové inžinierstvo**. Momentálne pracujem výskume Identifikácii Jetov pomocou Hlbokých Neurónových Sietí ([JIDENN](https://github.com/jansam123/JIDENN)).
 
 socialLinks:
@@ -24,13 +23,13 @@ socialLinks:
     icon: "fab fa-github"
     url: "https://www.github.com/jansam123/"
 
-  - name: LinkedIn
-    icon: "fab fa-linkedin"
-    url: "https://www.linkedin.com/in/jansam123/"
+  # - name: LinkedIn
+  #   icon: "fab fa-linkedin"
+  #   url: "https://www.linkedin.com/in/jansam123/"
 
 resourceLinks:
   - title: "Moje rezumé"
-    url: "files/resume.pdf"
+    url: "files/CV.pdf"
 # - type: soft-skill-indicator
 #   name: Leadership
 #   percentage: 85

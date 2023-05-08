@@ -23,9 +23,9 @@ socialLinks:
     icon: "fab fa-github"
     url: "https://www.github.com/jansam123/"
 
-  - name: LinkedIn
-    icon: "fab fa-linkedin"
-    url: "https://www.linkedin.com/in/jansam123/"
+  # - name: LinkedIn
+  #   icon: "fab fa-linkedin"
+  #   url: "https://www.linkedin.com/in/jansam123/"
 
 resume: "files/CV.pdf"
 # - type: soft-skill-indicator
