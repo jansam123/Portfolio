@@ -17,131 +17,132 @@ hero: nvidia_smi.jpg
 1. Login to gpulab using CAS login, follow this [guide](https://gitlab.mff.cuni.cz/mff/hpc/clusters#installed-software-on-clusters). 
 2. Write to admin (jakub.yaghob@mff.cuni.cz) to get access to docker.
 
-## Docker to Charliecloud
-3. Access docker with 
+## Charliecloud image
+3. Log into a gpu node
     ```bash
-    salloc -C docker
+    srun -p gpu-ffa --gpus=1 --time=5:00:00 --pty bash
     ```
-4. Pull CUDA from docker hub
+4. Pull nvidia docker image with Charliecloud
     ```bash
-    sudo docker pull nvidia/cuda:11.7.1-devel-ubuntu22.04
+    ch-image pull nvidia/cuda:12.2-devel-ubuntu22.04
     ```
-5. Now we need to convert the docker image to charliecloud image. 
-You can try to run the following code:
+5. Convert the docker image to charliecloud image expressed as a directory `./my-tf` 
     ```bash
-    ch-convert -i docker nvidia/cuda:11.7.1-devel-ubuntu22.04 cuda
+    ch-convert -i ch-image -o dir tensorflow/tensorflow:latest-gpu ./my-tf
     ```
-    If you get an error (in my case it was due to my id being out of range), you need to start a docker container from the image,
+6. Import CUDA libraries
     ```bash
-    sudo docker run --rm -d -it --name cuda nvidia/cuda:11.7.1-devel-ubuntu22.04 bash
-    ```
-    then save the container as a tar file.
-    ```bash
-    sudo docker export cuda > cuda.tar.gz
-    ```
-    Then you can convert the tar file to a charliecloud image.
-    ```bash
-    ch-convert cuda.tar.gz cuda
-    ```
-    Stop the container.
-    ```bash
-    sudo docker stop cuda
-    ```
-    You can verify deletion of the container with
-    ```bash
-    sudo docker ps -a
-    ```
-6. Convert the image to folder strucutre.
-    ```bash
-    ch-convert cuda ./cuda
+    ch-fromhost --nvidia ./my-tf
     ``` 
-## CUDA
-7. To upload CUDA libraries, first exit the `dw[01-05]` node
+7. Launch the container
+   ```bash
+    ch-run -w -c /home/jankovys --bind=/home/jankovys -u 0 -g 0 ./my-tf -- bash
+    ``` 
+The command above will launch the container with working directory `/home/jankovys` and write access to the container (`-w`). The `--bind=/home/jankovys` option will bind the `/home/jankovys` directory on the host to the `/home/jankovys` directory in the container. The `-u 0 -g 0` options will run the container as root user. The `--` at the end of the command tells ch-run that the command to run in the container follows. 
+
+8. Verify the GPU support
     ```bash
-    username@dw[01-05]:~$ exit
-    ```
-    then upload the CUDA libs from node with GPU
-    ```bash
-    srun -p gpu-ffa --gpus=1 ch-fromhost --nvidia ./cuda
-    ```
-    You can verify the upload with
-    ```bash
-     srun -p gpu-ffa --gpus=1 ch-run cuda nvidia-smi
+    nvidia-smi
     ```
     You should see something like this:
     ![nvidia-smi](nvidia_smi.jpg)
+## [Conda](https://gretel.ai/blog/install-tensorflow-with-cuda-cdnn-and-gpu-support-in-4-easy-steps)
+9. Install conda
+    ```bash
+    wget https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-x86_64.sh
+    bash Anaconda3-2023.07-2-Linux-x86_64.sh
+    ```
+You can verify the installation by running `conda --version`. 
+10. Update conda
+    ```bash
+    conda update conda
+    ```
+11. Create a new environment
+    ```bash
+    conda create --name tf python=3.10
+    ```
+12. Activate the environment
+    ```bash
+    conda activate tf
+    ```
+You can deactivate the environment by running `conda deactivate`.
 
-## [cuDNN](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html)
-8. To use the cuDNN library, you need to register on the [NVIDIA Developer Program](https://developer.nvidia.com/developer-program). Then you can download the cuDNN library from [here](https://developer.nvidia.com/rdp/cudnn-download). Find the version of cuDNN that matches your CUDA version and container OS. If you are using the same container tag, as shown above download `Local Installer for Ubuntu22.04 x86_64 (Deb)` for `CUDA 11.X`. Afterwards upload the file to GPULab using `scp`
+## [CUDA libraries](https://www.tensorflow.org/install/pip)
+13. Install CUDA and cuDNN libraries
     ```bash
-    scp cudnn-local-repo-ubuntu2204-8.5.0.96_1.0-1_amd64.deb username@gpulab:~/
+    conda install -c conda-forge cudatoolkit=11.8.0
+    pip install nvidia-cudnn-cu11==8.6.0.163
     ```
-9. Extract the cuDNN library in the Charliecloud image
+14. Configure system paths
     ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- dpkg -i cudnn-local-repo-ubuntu2204-8.5.0.96_1.0-1_amd64.deb
+    CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))
+    export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$CONDA_PREFIX/lib/:$LD_LIBRARY_PATH
     ```
-10. Install the cuDNN library:
-    1. import key
-        ```bash
-        srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- cp /var/cudnn-local-repo-ubuntu2204-8.5.0.96/cudnn-local-7ED72349-keyring.gpg /usr/share/keyrings/
-        ```
-    3. refresh repo metadata
-        ```bash
-        srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- apt-get update
-        ```
-    4. install cuDNN
-        ```bash
-        srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- apt-get install libcudnn8=8.5.0.96-1+cuda11.7
-        ```
-        You might need to press enter to confirm the installation, even if not prompted yet. 
+15. The previous command needs to be run every time you activate the conda environment. To avoid this and run it automatically, run the following commands: 
+    ```bash
+    mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+    echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    echo 'export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$CONDA_PREFIX/lib/:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    ```
 
-If needed, you can follow the official [guide](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) for more details, but remeber to use the prefix `srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda --` and run without sudo. 
-The prefix explains the following: 
-- `srun -p gpu-ffa --gpus=1` - run on node with GPU
-- `ch-run -w -u 0 -g 0 -c /home/username ./cuda` - run as root user (`-u 0 -g 0`) in the container in `./cuda` with working directory `/home/username` and write access to the container (`-w`).
-- after `--`  the command to run in the container.
-
-## Python
-11. Install python3.10
+## [Tensorflow](https://www.tensorflow.org/install/pip)
+16. Upgrade pip
     ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- apt-get install python3
+    pip install --upgrade pip
     ```
-    Again you might need to press enter to confirm the installation, even if not prompted yet.
-12. Install pip
+17. Install tensorflow
     ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -u 0 -g 0 -c /home/username ./cuda -- apt-get install python3-pip
+    pip install tensorflow
     ```
-    Again you might need to press enter to confirm the installation, even if not prompted yet.
-13. Verify the installation
+18. Verify the installation and GPU support
     ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -c /home/username ./cuda -- python3 --version
-    ```
-    You should see something like this:
-    ```bash
-    Python 3.10.4
-    ```
-## Tensorflow
-14. Install tensorflow
-    ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -c /home/username ./cuda -- pip3 install tensorflow
-    ```
-15. Verify the installation
-    ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -c /home/username ./cuda -- python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+    python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
     ```
     You should see something like this:
     ```bash
     tf.Tensor(0.0, shape=(), dtype=float32)
     ```
-16. Verify GPU support
+    Verify GPU support
     ```bash
-    srun -p gpu-ffa --gpus=1 ch-run -w -c /home/username ./cuda -- python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+    python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
     ```
     You should see something like this:
     ```bash
     [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
     ```
-## Notes
+
+## Running scripts
+To run a python script `runMe.py` create a file `runMe.sh` with the following content:
+```bash
+#!/bin/bash
+#SBATCH --partition=gpu-ffa                                  # partition you want to run job in
+#SBATCH --gpus=1                                             # number of GPUs
+#SBATCH --mem=16G                                            # CPU memory resource
+#SBATCH --time=12:00:00					                     # time limit
+#SBATCH --cpus-per-task=8                                    # cpus per tasks
+#SBATCH --job-name="run_conda"                               # change to your job name
+#SBATCH --output=/home/jankovys/JIDENN/out/%x.%A.%a.log      # output file    
+
+ch-run -w --bind=/home/jankovys -c /home/jankovys/JIDENN /home/jankovys/my-tf -- /bin/bash; conda run -n tf python runMe.py
+```
+Then run the script using `sbatch runMe.sh` (this should be run from the head node). 
+This script will automatically log onto a working node with selected resources, launch the container, activate the conda environment and run the python script.
+The `\bin\bash` command is necessary to launch all the conda initialization scripts.
+
+To run the script in a interactive session, run the following command:
+```bash
+srun -p gpu-ffa --gpus=1 --time=5:00:00 --pty bash
+ch-run -w -c /home/jankovys --bind=/home/jankovys -u 0 -g 0 ./my-tf -- bash
+conda activate tf
+python runMe.py
+```
+
+
+
+
+
+
+<!-- ## Notes
 ### Syntax highlighting and autocompletion in IDE
 Include this lines in `__init__.py` file of tensorflow if you autocompletion and syntax highlighting in your IDE
 
@@ -169,5 +170,5 @@ To fix this, you need to add the following lines to `~/.bashrc` (use `source ~/.
 ```
 And create symlink for `libcuda.so`:
 ```bash
-    ln -s /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so.1 /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so
+    ln -s /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so.1 /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so -->
 ```
