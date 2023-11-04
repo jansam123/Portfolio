@@ -3,7 +3,7 @@ section:
   name: Publikácie
   id: publications
   enable: true
-  weight: 5
+  weight: 2
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -19,18 +19,17 @@ section:
 # - name: Security
 #   filter: "security"
 
-# # your publications
 publications:
-  - title: Tagovanie jetov pochádzajúcich z kvarkov a gluónov (Bakalárska práca)
-    publishedIn:
-      name: Matematicko-fyzikální fakulta, Univerzita Karlova
-      date: 21 Jún 2023
-      url: https://mff.cuni.cz
-    authors:
-      - name: Samuel Jankovych
-        url: https://jansam.wieno.sk/sk/
-    paper:
-      summary: Pre správne pochopenie fyziky elementárnych častíc a ich interakcií je dôležité poznať, či je jet iniciovaný kvarkom alebo gluonom. Tento problém nie je jednoduchý kvôli podobným vlastnostiam kvarkových a gluonových jetov. V tejto práci ho riešime pomocou moderných techník Hlbokého učenia. Konkrétne využijeme neurónové siete založené na architektúre Transformeru, ktoré sú natrénované na konstituentoch jetu. Predchádzajúce architektúry používané v rôznych tagovacích úlohách vylepšíme a demonštrujeme ich schopnosť presne rozlíšiť medzi kvarkovými a gluonovými jetmi. Predstavíme novú architektúru Dynamically Enhanced Particle Transformer (DeParT) ako kombináciu poznatkov z rôznych aplikačných oblastí Hlbokého učenia, ktorá prekoná výsledky všetkých predchádzajúcich modelov.
-      url: https://github.com/jansam123/bachelor_thesis
-    categories: ["jet-tagging", "bachelor"]
-    tags: ["ATLAS", "Jet", "Neúronová sieť", "Transformer", "Hlboké učenie"]
+- title: Constituent-Based Quark Gluon Tagging using Transformers with the ATLAS detector
+  publishedIn:
+    name: ATLAS Public Note
+    date: 03 November 2023
+    url: https://cds.cern.ch/record/2878932
+  authors:
+  - name: The ATLAS collaboration
+    url: https://atlas.cern
+  paper:
+    summary: Jet constituents provide a more complete description of the radiation pattern inside a jet than observables describing the global jet properties like the number of tracks or the jet width. An approach to tag quark- and gluon-initiated jets using their constituents (Particle Flow Objects) reconstructed in ATLAS is presented. Monte Carlo simulations of proton--proton collisions at center of mass energy of 13 TeV are used. Transformer architectures are used to learn long-range dependencies between jet constituent kinematic variables. Several variations of transformers are studied, and their performance is compared to taggers based on global jet properties and other jet constituent taggers. A new Deep Learning architecture (DeParT) is presented, slightly outperforming other networks. All models are evaluated on simulated data from multiple Monte Carlo generators to study their model-dependence.
+    url: https://cds.cern.ch/record/2878932
+  categories: ["jet-tagging","bachelor"]
+  tags: ["ATLAS", "Jet", "Neúronová sieť", "Transformer", "Hlboké učenie"]

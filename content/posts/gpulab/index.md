@@ -13,9 +13,9 @@ hero: nvidia_smi.jpg
 ---
 
 ## Prerequisites
-0. Get a CAS login.
-1. Login to gpulab using CAS login, follow this [guide](https://gitlab.mff.cuni.cz/mff/hpc/clusters#installed-software-on-clusters). 
-2. Write to admin (jakub.yaghob@mff.cuni.cz) to get access to docker.
+1. Get a CAS login.
+2. Login to gpulab using CAS login, follow this [guide](https://gitlab.mff.cuni.cz/mff/hpc/clusters#installed-software-on-clusters). 
+
 
 ## Charliecloud image
 3. Log into a gpu node
@@ -28,7 +28,7 @@ hero: nvidia_smi.jpg
     ```
 5. Convert the docker image to charliecloud image expressed as a directory `./my-tf` 
     ```bash
-    ch-convert -i ch-image -o dir tensorflow/tensorflow:latest-gpu ./my-tf
+    ch-convert -i ch-image -o dir nvidia/cuda:12.2-devel-ubuntu22.04 ./my-tf
     ```
 6. Import CUDA libraries
     ```bash
@@ -44,15 +44,15 @@ The command above will launch the container with working directory `/home/jankov
     ```bash
     nvidia-smi
     ```
-    You should see something like this:
-    ![nvidia-smi](nvidia_smi.jpg)
 ## [Conda](https://gretel.ai/blog/install-tensorflow-with-cuda-cdnn-and-gpu-support-in-4-easy-steps)
 9. Install conda
     ```bash
+    apt-get install wget
     wget https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-x86_64.sh
     bash Anaconda3-2023.07-2-Linux-x86_64.sh
     ```
 You can verify the installation by running `conda --version`. 
+
 10. Update conda
     ```bash
     conda update conda

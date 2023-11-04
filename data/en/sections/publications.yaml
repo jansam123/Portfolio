@@ -3,7 +3,7 @@ section:
   name: Publications
   id: publications
   enable: true
-  weight: 5
+  weight: 2
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -21,16 +21,16 @@ section:
 
 # # your publications
 publications:
-- title: Quark\Gluon Jet Tagging (Bachelor Thesis)
+- title: Constituent-Based Quark Gluon Tagging using Transformers with the ATLAS detector
   publishedIn:
-    name: Faculty of Mathematics and Physics, Charles University 
-    date: 21 June 2023
-    url: https://mff.cuni.cz/en
+    name: ATLAS Public Note
+    date: 03 November 2023
+    url: https://cds.cern.ch/record/2878932
   authors:
-  - name: Samuel Jankovych
-    url: https://jansam.wieno.sk
+  - name: The ATLAS collaboration
+    url: https://atlas.cern
   paper:
-    summary: Distinguishing between jets initiated by quarks and gluons is a challenging problem, yet very important for detailed studies of elementary particles and their interactions. This thesis will present a novel Deep Learning approach to this problem using a neural network architecture based on the Transformer model trained on the jet constituents. We improve the existing architectures used in different tagging tasks and show their ability to accurately distinguish between quark and gluon jets. By combining techniques from different fields of Deep Learning, we propose a Dynamically Enhanced Particle Transformer (DeParT) that can surpass the state-of-the-art results in the quark/gluon jet tagging task.
-    url: https://github.com/jansam123/bachelor_thesis
+    summary: Jet constituents provide a more complete description of the radiation pattern inside a jet than observables describing the global jet properties like the number of tracks or the jet width. An approach to tag quark- and gluon-initiated jets using their constituents (Particle Flow Objects) reconstructed in ATLAS is presented. Monte Carlo simulations of proton--proton collisions at center of mass energy of 13 TeV are used. Transformer architectures are used to learn long-range dependencies between jet constituent kinematic variables. Several variations of transformers are studied, and their performance is compared to taggers based on global jet properties and other jet constituent taggers. A new Deep Learning architecture (DeParT) is presented, slightly outperforming other networks. All models are evaluated on simulated data from multiple Monte Carlo generators to study their model-dependence.
+    url: https://cds.cern.ch/record/2878932
   categories: ["jet-tagging","bachelor"]
   tags: ["ATLAS", "Jet", "Neural Networks", "Transformer", "Deep Learning"]

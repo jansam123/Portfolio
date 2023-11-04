@@ -3,15 +3,15 @@ section:
   id: education
   template: sections/education.html # Use "sections/education-alt.html for alternate template.
   enable: true
-  weight: 4
+  weight: 3
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
 degrees:
-  - name: Bc. Fyzika
+  - name: Mgr. Časticová a jadrová fyzika
     icon: fa-graduation-cap
-    timeframe: 2020-
+    timeframe: 2023-
     institution:
       name: Matematicko-fyzikálna fakulta, Univerzita Karlova
       url: "https://www.mff.cuni.cz/"
@@ -19,6 +19,40 @@ degrees:
     #   scale: CGPA
     #   achieved: 3.5
     #   outOf: 4
+    # takenCourses: #(optional)
+    #   # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+    #   showGrades: true
+    #   collapseAfter: 3
+    #   courses:
+    #     - name: General Relativity
+    #       achieved: 1 (A)
+    #       # outOf: 4
+    #     - name: Deep Learning
+    #       achieved: 1 (A)
+    #       # outOf: 4
+    #     - name: Mathematical Analysis
+    #       achieved: 1 (A)
+    #       # outOf: 4
+    #     - name: Theoretical Mechanics
+    #       achieved: 1 (A)
+    # publications: #(optional)
+    #   - title: Fake tau background in excited tau search
+    #     url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
+    #   - title: Quark\Gluon Jet Tagging (Bachelor Thesis)
+    #     url: "https://github.com/jansam123/bachelor_thesis"
+    # extracurricularActivities: #(optional)
+    #   - Summer School Project
+
+  - name: Bc. Fyzika
+    icon: fa-graduation-cap
+    timeframe: 2020-2023
+    institution:
+      name: Matematicko-fyzikálna fakulta, Univerzita Karlova
+      url: "https://www.mff.cuni.cz/"
+    grade: #(optional)
+      scale: ECTS
+      achieved: červený diplom, 1 (A) z
+      outOf: 4 (F) 
     takenCourses: #(optional)
       # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
       showGrades: true
