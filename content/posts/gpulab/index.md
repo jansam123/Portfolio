@@ -139,7 +139,16 @@ python runMe.py
 
 
 
-
+## Troubleshooting
+### `Could not load library libcudnn_cnn_infer.so.8. Error: libcuda.so: cannot open shared object file: No such file or directory` error
+When using CNN in TF you might get the following error:
+```bash
+    Could not load library libcudnn_cnn_infer.so.8. Error: libcuda.so: cannot open shared object file: No such file or directory
+```
+To fix this create a link inside your charliecloud image:
+```bash
+    ln -s /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so.1 /usr/local/cuda/targets/x86_64-linux/lib/libcuda.so
+```
 
 
 <!-- ## Notes
