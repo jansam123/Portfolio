@@ -91,7 +91,7 @@ degrees:
     publications: #(optional)
       - title: Fake tau pozadie v hľadaní excitovaných tau
         url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
-      - title: Tagovanie jetov pochádzajúcich z kvarkov a gluónov (Bakalárska práca)
+      - title: Tagovanie jetov pochádzajúcich z kvarkov a gluónov (Bakalárska práca, pod vedením Mgr. Vojtěcha Pleskota Ph.D.)
         url: "https://github.com/jansam123/bachelor_thesis"
     extracurricularActivities: #(optional)
       - Letný študentský projekt

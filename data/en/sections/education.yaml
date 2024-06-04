@@ -89,7 +89,7 @@ degrees:
     publications: #(optional)
       - title: Fake tau background in excited tau search
         url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
-      - title: Quark\Gluon Jet Tagging (Bachelor Thesis)
+      - title: Quark/Gluon Jet Tagging (Bachelor Thesis, supervised by Mgr. Vojtěch Pleskot Ph.D.)
         url: "https://github.com/jansam123/bachelor_thesis"
     extracurricularActivities: #(optional)
       - Summer School Project
