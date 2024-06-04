@@ -24,11 +24,11 @@ hero: nvidia_smi.jpg
     ```
 4. Pull nvidia docker image with Charliecloud
     ```bash
-    ch-image pull nvidia/cuda:12.2-devel-ubuntu22.04
+    ch-image pull tensorflow/tensorflow:latest-gpu
     ```
 5. Convert the docker image to charliecloud image expressed as a directory `./my-tf` 
     ```bash
-    ch-convert -i ch-image -o dir nvidia/cuda:12.2-devel-ubuntu22.04 ./my-tf
+    ch-convert -i ch-image -o dir tensorflow/tensorflow:latest-gpu ./my-tf
     ```
 6. Import CUDA libraries
     ```bash
@@ -44,57 +44,23 @@ The command above will launch the container with working directory `/home/jankov
     ```bash
     nvidia-smi
     ```
-## [Conda](https://gretel.ai/blog/install-tensorflow-with-cuda-cdnn-and-gpu-support-in-4-easy-steps)
-9. Install conda
-    ```bash
-    apt-get install wget
-    wget https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-x86_64.sh
-    bash Anaconda3-2023.07-2-Linux-x86_64.sh
-    ```
-You can verify the installation by running `conda --version`. 
-
-10. Update conda
-    ```bash
-    conda update conda
-    ```
-11. Create a new environment
-    ```bash
-    conda create --name tf python=3.10
-    ```
-12. Activate the environment
-    ```bash
-    conda activate tf
-    ```
-You can deactivate the environment by running `conda deactivate`.
-
-## [CUDA libraries](https://www.tensorflow.org/install/pip)
-13. Install CUDA and cuDNN libraries
-    ```bash
-    conda install -c conda-forge cudatoolkit=11.8.0
-    pip install nvidia-cudnn-cu11==8.6.0.163
-    ```
-14. Configure system paths
-    ```bash
-    CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))
-    export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$CONDA_PREFIX/lib/:$LD_LIBRARY_PATH
-    ```
-15. The previous command needs to be run every time you activate the conda environment. To avoid this and run it automatically, run the following commands: 
-    ```bash
-    mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-    echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-    echo 'export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$CONDA_PREFIX/lib/:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-    ```
 
 ## [Tensorflow](https://www.tensorflow.org/install/pip)
+If you want to install tensorflow, it must be **the same version as tensorflowe in the charliecloud image**.
 16. Upgrade pip
-    ```bash
-    pip install --upgrade pip
-    ```
-17. Install tensorflow
-    ```bash
-    pip install tensorflow
-    ```
-18. Verify the installation and GPU support
+```bash
+pip install --upgrade pip
+```
+17. create a virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+18. Install tensorflow
+```bash
+pip install tensorflow
+```
+19. Verify the installation and GPU support
     ```bash
     python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
     ```
@@ -123,17 +89,26 @@ To run a python script `runMe.py` create a file `runMe.sh` with the following co
 #SBATCH --job-name="run_conda"                               # change to your job name
 #SBATCH --output=/home/jankovys/JIDENN/out/%x.%A.%a.log      # output file    
 
-ch-run -w --bind=/home/jankovys -c /home/jankovys/JIDENN /home/jankovys/my-tf -- /bin/bash; conda run -n tf python runMe.py
+ch-run -w --bind=/home/jankovys -c /home/jankovys/JIDENN /home/jankovys/my-tf -- bash_scripts/runner_inside.sh
 ```
-Then run the script using `sbatch runMe.sh` (this should be run from the head node). 
-This script will automatically log onto a working node with selected resources, launch the container, activate the conda environment and run the python script.
-The `\bin\bash` command is necessary to launch all the conda initialization scripts.
+and a file `runner_inside.sh` with the following content:
+```bash
+#!/bin/bash
+venv/bin/python runMe.py
+```
+To import the CUDA libraries, you need start the sbatch job from a working node:
+```bash
+srun -p gpu-ffa --gpus=1 --pty bash
+sbatch runMe.sh
+```
+The `runMe.sh` script will automatically log onto a working node with selected resources, launch the container, and run the `runner_inside.sh` script. 
+The `runner_inside.sh` script will activate the virtual environment and run the `runMe.py` script with CUDA support.
 
 To run the script in a interactive session, run the following command:
 ```bash
 srun -p gpu-ffa --gpus=1 --time=5:00:00 --pty bash
 ch-run -w -c /home/jankovys --bind=/home/jankovys -u 0 -g 0 ./my-tf -- bash
-conda activate tf
+source venv/bin/activate
 python runMe.py
 ```
 

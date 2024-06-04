@@ -3,38 +3,36 @@ section:
   id: education
   template: sections/education.html # Use "sections/education-alt.html for alternate template.
   enable: true
-  weight: 3
+  weight: 4
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
 degrees:
-  - name: Mgr. in Particle and Nuclear Physics
+  - name: Mgr. (MSc.) in Particle and Nuclear Physics
     icon: fa-graduation-cap
-    timeframe: 2023-
+    timeframe: 2023-2025
     institution:
       name: Faculty of Mathematics and Physics, Charles University
       url: "https://www.mff.cuni.cz/en/"
+
+    takenCourses: #(optional)
+      # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+      showGrades: true
+      collapseAfter: 3
+      courses:
+        - name: Quantum Field Theory
+          achieved: 1 (A)
+          # outOf: 4
+        # - name: Thoery of Electroweak Interactions
+        #   achieved: 1 (A)
+        #   # outOf: 4
+        # - name: Quantum Chromodynamics
+        #   achieved: 1 (A)
     # grade: #(optional)
     #   scale: CGPA
     #   achieved: 3.5
     #   outOf: 4
-    # takenCourses: #(optional)
-    #   # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
-    #   showGrades: true
-    #   collapseAfter: 3
-    #   courses:
-    #     - name: General Relativity
-    #       achieved: 1 (A)
-    #       # outOf: 4
-    #     - name: Deep Learning
-    #       achieved: 1 (A)
-    #       # outOf: 4
-    #     - name: Mathematical Analysis
-    #       achieved: 1 (A)
-    #       # outOf: 4
-    #     - name: Theoretical Mechanics
-    #       achieved: 1 (A)
     # publications: #(optional)
     #   - title: Fake tau background in excited tau search
     #     url: "https://drive.google.com/file/d/1k7So9AuAj62re_s0pZRw0U2cgkDUlR0y/view?usp=sharing"
@@ -42,8 +40,27 @@ degrees:
     #     url: "https://github.com/jansam123/bachelor_thesis"
     # extracurricularActivities: #(optional)
     #   - Summer School Project
+  - name: DESY, Hamburg
+    icon: fa-sun
+    timeframe: 2024
+    institution:
+      name: Terascale Monte Carlo School
+      url: "https://indico.desy.de/event/42810/overview"
+    grade: #(optional)
+      scale: Grade
+      achieved: A
+      # outOf: 100
+    takenCourses: #(optional)
+      showGrades: false
+      collapseAfter: 3
+      courses:
+        - name: Sherpa, Herwig, Pythia Tutorial
+        - name: Parton Shower and Matching/Merging
+        - name: NLO and higher-order calculations
+        - name: PDFs, uncertainties
+        - name: Resummation
 
-  - name: Bc. in Physics
+  - name: Bc. (BSc.) in Physics
     icon: fa-graduation-cap
     timeframe: 2020-2023
     institution:
@@ -77,11 +94,11 @@ degrees:
     extracurricularActivities: #(optional)
       - Summer School Project
 
-  - name: Summer School
+  - name: Georg-August-Universität Göttingen
     icon: fa-sun
     timeframe: 2020
     institution:
-      name: HASCO
+      name: HASCO Summer School
       url: "https://indico.cern.ch/event/1122790/"
     grade: #(optional)
       scale: Grade

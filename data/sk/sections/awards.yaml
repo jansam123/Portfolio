@@ -1,0 +1,88 @@
+section:
+  name: Ocenenia a granty
+  id: accomplishments
+  enable: true
+  weight: 6
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+
+# Your accomplishments
+accomplishments:
+- name: GAUK, Grantová agentúra Karlovej Univerzity
+  timeline: "2024-2025"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: 2 year grant, 6600 EUR per year 
+  courseOverview: 2-ročný grant, 6600 EUR ročne
+  certificateURL: "https://is.cuni.cz/webapps/index.php?controller=GaukPublic&action=listing&rok=2024&typ=N"
+
+# - name: Price of the Rector of Charles University
+- name: Cena rektora Univerzity Karlovej
+  timeline: "2023"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: Best bachelor student in the field of Natural Sciences, 800 EUR
+  courseOverview: Najlepší bakalársky študent v oblasti prírodných vied, 800 EUR
+  certificateURL: "https://cuni.cz/uk-382.html"
+
+# - name: Price of the Dean of the Faculty of Mathematics and Physics of Charles University
+- name: Cena dekana Matematicko-fyzikálnej fakulty Univerzity Karlovej
+  timeline: "2023"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: Second best bachelor thesis in the field of Physics, 320 EUR
+  courseOverview: Druhá najlepšia bakalárska práca v oblasti fyziky, 320 EUR
+  certificateURL: "https://www.mff.cuni.cz/cs/verejnost/aktuality/oceneni-pro-nejlepsi-bakalarske-a-diplomove-prace-2022-2023"
+
+# - name: Prize of the Minister of Education, Youth and Sports
+- name: Cena ministra školstva, mládeže a športu
+  timeline: "2023"
+  organization:
+    name: Ministerstvo školstva, mládeže a športu
+    url: "https://msmt.gov.cz/"
+  # courseOverview: Best bachelor student in Czech Republic, 2000 EUR
+  courseOverview: Najlepší bakalársky študent v Českej republike, 2000 EUR
+  certificateURL: "https://msmt.gov.cz/vzdelavani/vysoke-skolstvi/cena-ministra-pro-vynikajici-studenty-a-absolventy-a-za?lang=1"
+
+# - name: Czecho-Slovak Student Scientific Conference in Physics
+- name: Česko-slovenská študentská vedecká konferencia vo fyzike
+  timeline: "2023"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: 2nd place, 130 EUR
+  courseOverview: 2. miesto, 130 EUR
+  certificateURL: "https://www.mff.cuni.cz/cs/verejnost/aktuality/studentska-vedecka-konference-ve-fyzice-opet-na-matfyzu"
+
+# - name: Scholarship for Excellent Study Results
+- name: Stipendium za výborné študijné výsledky
+  timeline: "2022"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: 2nd year Bc., 770 EUR
+  courseOverview: 2. ročník Bc., 770 EUR
+
+# - name: Scholarship for Excellent Study Results
+- name: Stipendium za výborné študijné výsledky
+  timeline: "2021"
+  organization:
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: Summer Term 1st year Bc., 770 EUR
+  courseOverview: Letný semester 1. ročník Bc., 770 EUR
+
+# - name: Scholarship for Excellent Study Results
+- name: Stipendium za výborné študijné výsledky
+  timeline: "2020"
+  organization:
+    # name: Charles University, Prague
+    name: Univerzita Karlova, Praha
+    url: "https://www.mff.cuni.cz/"
+  # courseOverview: Winter Term 1st year Bc., 640 EUR 
+  courseOverview: Zimný semester 1. ročník Bc., 640 EUR

@@ -3,7 +3,7 @@ section:
   id: education
   template: sections/education.html # Use "sections/education-alt.html for alternate template.
   enable: true
-  weight: 3
+  weight: 4
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -42,6 +42,25 @@ degrees:
     #     url: "https://github.com/jansam123/bachelor_thesis"
     # extracurricularActivities: #(optional)
     #   - Summer School Project
+  - name: DESY, Hamburg
+    icon: fa-sun
+    timeframe: 2024
+    institution:
+      name: Terascale Monte Carlo School
+      url: "https://indico.desy.de/event/42810/overview"
+    grade: #(optional)
+      scale: Grade
+      achieved: A
+      # outOf: 100
+    takenCourses: #(optional)
+      showGrades: false
+      collapseAfter: 3
+      courses:
+        - name: Sherpa, Herwig, Pythia cvičenie
+        - name: Parton Shower and Matching/Merging
+        - name: NLO and higher-order calculations
+        - name: PDFs, uncertainties
+        - name: Resummation
 
   - name: Bc. Fyzika
     icon: fa-graduation-cap

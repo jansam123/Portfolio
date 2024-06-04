@@ -1,0 +1,38 @@
+# section information
+section:
+  name: Talks and Conferences
+  id: projects
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+# buttons:
+#   - name: All
+#     filter: "all"
+#   - name: Quark/Gluon Jet Tagging
+#     filter: "qg_tag"
+
+
+# your projects
+projects:
+  - name: ICHEP 2024
+    role: Poster
+    timeline: "July 2024, Prague, Czech Republic"
+    url: "https://ichep2024.org/"
+    summary: Constituent based Quark/Gluon Jet Tagging
+    tags: ["ATLAS", "ML", "Quark/Gluon Tagging"]
+  - name: ML4jets 2023
+    role: Talk
+    timeline: "November 2023, Hamburg, Germany"
+    url: "https://indico.cern.ch/event/1253794/overview"
+    summary: Constituent based Quark/Gluon Jet Tagging
+    tags: ["ATLAS", "ML", "Quark/Gluon Tagging"]
+  - name: ATLAS Hadronic Calibration Workshop 2023
+    role: Presentation
+    timeline: "September 2023, Valencia, Spain"
+    url: "https://indico.cern.ch/event/1268247/overview"
+    summary: Constituent based Quark/Gluon Jet Tagging
+    tags: ["ATLAS", "ML", "Quark/Gluon Tagging"]

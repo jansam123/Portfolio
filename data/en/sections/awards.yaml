@@ -1,0 +1,72 @@
+section:
+  name: Awards and Grants
+  id: accomplishments
+  enable: true
+  weight: 6
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+
+# Your accomplishments
+accomplishments:
+- name: GAUK, Charles University Grant Agency
+  timeline: "2024-2025"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: 2 year grant, 6600 EUR per year 
+  certificateURL: "https://is.cuni.cz/webapps/index.php?controller=GaukPublic&action=listing&rok=2024&typ=N"
+
+- name: Price of the Rector of Charles University
+  timeline: "2023"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: Best bachelor student in the field of Natural Sciences, 800 EUR
+  certificateURL: "https://cuni.cz/uk-382.html"
+
+- name: Price of the Dean of the Faculty of Mathematics and Physics of Charles University
+  timeline: "2023"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: Second best bachelor thesis in the field of Physics, 320 EUR
+  certificateURL: "https://www.mff.cuni.cz/cs/verejnost/aktuality/oceneni-pro-nejlepsi-bakalarske-a-diplomove-prace-2022-2023"
+
+- name: Prize of the Minister of Education, Youth and Sports
+  timeline: "2023"
+  organization:
+    name: Ministry of Education, Youth and Sports
+    url: "https://msmt.gov.cz/"
+  courseOverview: Best bachelor student in Czech Republic, 2000 EUR
+  certificateURL: "https://msmt.gov.cz/vzdelavani/vysoke-skolstvi/cena-ministra-pro-vynikajici-studenty-a-absolventy-a-za?lang=1"
+
+- name: Czecho-Slovak Student Scientific Conference in Physics
+  timeline: "2023"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: 2nd place, 130 EUR
+  certificateURL: "https://www.mff.cuni.cz/cs/verejnost/aktuality/studentska-vedecka-konference-ve-fyzice-opet-na-matfyzu"
+
+- name: Scholarship for Excellent Study Results
+  timeline: "2022"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: 2nd year Bc., 770 EUR
+
+- name: Scholarship for Excellent Study Results
+  timeline: "2021"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: Summer Term 1st year Bc., 770 EUR
+
+- name: Scholarship for Excellent Study Results
+  timeline: "2020"
+  organization:
+    name: Charles University, Prague
+    url: "https://www.mff.cuni.cz/"
+  courseOverview: Winter Term 1st year Bc., 640 EUR 
