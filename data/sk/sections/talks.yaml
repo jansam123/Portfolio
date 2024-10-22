@@ -18,9 +18,14 @@ section:
 
 # your projects
 projects:
+  - name: ATLAS Hadronic Calibration Workshop 2024
+    role: Blesková Prezentácia
+    timeline: "September 2024, Ottawa, Kanada"
+    url: "https://indico.cern.ch/event/1380446/overview"
+    summary: Constituent based Quark/Gluon Jet Tagging
+    tags: ["ATLAS", "ML", "Quark/Gluon Tagging"]
   - name: ICHEP 2024
     role: Poster
-    # timeline: "July 2024, Prague, Czech Republic"
     timeline: "Júl 2024, Praha, Česká republika"
     url: "https://ichep2024.org/"
     summary: Constituent based Quark/Gluon Jet Tagging

@@ -18,6 +18,12 @@ section:
 
 # your projects
 projects:
+  - name: ATLAS Hadronic Calibration Workshop 2024
+    role: Lightning Talk
+    timeline: "September 2024, Ottawa, Kanada"
+    url: "https://indico.cern.ch/event/1380446/overview"
+    summary: Quark Gluon Jet Taggers in Release 22
+    tags: ["ATLAS", "ML", "Quark/Gluon Tagging"]
   - name: ICHEP 2024
     role: Poster
     timeline: "July 2024, Prague, Czech Republic"

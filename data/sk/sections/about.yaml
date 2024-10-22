@@ -27,9 +27,10 @@ socialLinks:
   #   icon: "fab fa-linkedin"
   #   url: "https://www.linkedin.com/in/jansam123/"
 
-resourceLinks:
-  - title: "Moje rezumé"
-    url: "files/CV.pdf"
+resume: "files/CV.pdf"
+# resourceLinks:
+  # - title: "Moje CV"
+    # url: "files/CV.pdf"
 # - type: soft-skill-indicator
 #   name: Leadership
 #   percentage: 85
